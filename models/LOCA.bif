@@ -1,5 +1,5 @@
 network "LOCA" {
-property""
+property"this is a test"
 }
 variable LLOCA {
   type discrete [ 2 ] { no, yes };
