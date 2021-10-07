@@ -1,0 +1,24 @@
+network "LOCA" {
+property"this is a test"
+}
+variable ('A',0) {
+  type discrete [ 2 ] { no, yes };
+}
+variable ('A',1) {
+  type discrete [ 2 ] { no, yes };
+}
+variable ('B',1) {
+  type discrete [ 2 ] { no, yes };
+}
+probability ( ('A',0) ) {
+  table 0.9, 0.1;
+}
+probability ( ('A',1) | ('A',0) ) {
+  (no) 0.95, 0.05;
+  (yes) 0.05, 0.95;
+
+}
+probability ( ('B',1) | ('A',1) ) {
+  (no) 0.95, 0.05;
+  (yes) 0.05, 0.95;
+}
