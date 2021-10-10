@@ -1,0 +1,50 @@
+network "WU_LOFW" {
+property"this is WU's model"
+}
+variable LOFW {
+  type discrete [ 2 ] { no, yes };
+}
+variable PSGWL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable SSGWL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable PCPT {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+variable SCPT {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+probability ( LOFW ) {
+  table 0.9, 0.1;
+}
+probability ( PSGWL | LOFW ) {
+  (no) 0.05, 0.95, 0;
+  (yes) 0.95, 0.05, 0;
+
+}
+probability ( SSGWL | LOFW ) {
+  (no) 0.05, 0.95, 0;
+  (yes) 0.95, 0.05, 0;
+
+}
+probability ( PCPT | SGTR ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+
+}
+probability ( SCPT | SGTR ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+
+}
+probability ( AP | SGTR ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+}

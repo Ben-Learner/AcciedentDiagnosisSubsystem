@@ -1,0 +1,67 @@
+稳压器压力	         RP
+稳压器水位	         RWL
+上充流量	             UPF
+SG1给水流量           SG1WF
+SG1出口压力           SG1OP
+SG1出口蒸汽流量        SG1SF
+主蒸汽母管压力          MSHP
+安全壳压力              CP
+安全壳温度              CT
+安全壳放射性            CR
+地坑水位               PWL
+冷却剂平均温度           AT
+
+
+
+
+##连续性节点
+CR     安全壳放射性
+CP     安全壳压力
+CT     安全壳温度
+PWL    地坑水位
+PCCL   1#冷却剂流量
+SCCL   2#冷却剂流量
+TCCL   3#冷却剂流量
+PSGR   1#SG放射性
+SSGR   2#SG放射性
+PP     1#冷却剂压力
+SP     2#冷却剂压力
+TP     3#冷却剂压力
+PSGWL  1#蒸汽发生器水位
+SSGWL  2#蒸汽发生器水位
+PSGP   1#蒸汽发生器压力
+SSGP   2#蒸汽发生器压力
+PCPT   1#冷管段温度
+SCPT   2#冷管段温度
+AP     一回路冷却剂平均压力
+RP     稳压器压力
+RWL    稳压器水位
+
+
+RIS001BA-P    RIS001BA安注箱压力
+RIS001BA-WL   RIS001BA安注箱水位
+RIS002BA-P    RIS002BA安注箱压力
+RIS002BA-WL   RIS002BA安注箱水位
+RIS003BA-P    RIS003BA安注箱压力
+RIS003BA-WL   RIS003BA安注箱水位
+PTR001BA-P    PTR001BA换料水箱压力
+PTR001BA-WL   PTR001BA换料水箱水位
+PCIF          1#注入冷段管线流量（低压安注）
+SCIF          2#注入冷段管线流量
+TCIF          3#注入冷段管线流量
+PHIF          1#注入热段管线流量（低压安注冷热再循环）
+SHIF          2#注入热段管线流量
+ACSF          安全壳喷淋A列流量
+BCSF          安全壳喷淋B列流量
+##始发事件
+LLOCA    大破口失水事故
+##题头事件
+MPSI     中压安注
+EAS-DS   安全壳直接喷淋
+LHSI-DI  低压安注直接注入
+LHSI-CR  低压安注冷段再循环(建立题头事件的CPD时，有考虑启动信号符合要求的情况)
+LHSI-CHR 低压安注冷热段同时再循环
+EAS-RS   安全壳喷淋再循环
+##其他
+LPDI-Signal 低压安注直接注入启动信号
+

@@ -1,0 +1,62 @@
+network "WU_SGTR" {
+property"this is WU's model"
+}
+variable SGTR {
+  type discrete [ 2 ] { no, yes };
+}
+variable PSGR {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable SSGR {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable PCCL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+variable SCCL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable RP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable RWL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+probability ( SGTR ) {
+  table 0.9, 0.1;
+}
+probability ( PSGR | SGTR ) {
+  (no) 0, 0.98, 0.02;
+  (yes) 0, 0.02, 0.98;
+
+}
+probability ( SSGR | SGTR ) {
+  (no) 0, 0.98, 0.02;
+  (yes) 0, 0.02, 0.98;
+
+}
+probability ( PCCL | SGTR ) {
+  (no) 0.02, 0.98, 0;
+  (yes) 0.98, 0.02, 0;
+}
+probability ( SCCL | SGTR ) {
+  (no) 0.02, 0.98, 0;
+  (yes) 0.98, 0.02, 0;
+}
+probability ( AP | SGTR ) {
+  (no) 0.02, 0.98, 0;
+  (yes) 0.98, 0.02, 0;
+}
+probability ( RP | SGTR ) {
+  (no) 0.02, 0.98, 0;
+  (yes) 0.98, 0.02, 0;
+}
+probability ( RWL | SGTR ) {
+  (no) 0.02, 0.98, 0;
+  (yes) 0.98, 0.02, 0;
+}

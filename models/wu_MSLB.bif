@@ -1,0 +1,60 @@
+network "WU_MSLB" {
+property"this is WU's model"
+}
+variable MSLB {
+  type discrete [ 2 ] { no, yes };
+}
+variable CP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable CT {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable PSGWL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+variable SSGWL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+variable PSGP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+variable SSGP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+probability ( MSLB ) {
+  table 0.9, 0.1;
+}
+probability ( CP | MSLB ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+
+}
+probability ( CT | MSLB ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+
+}
+probability ( PSGWL | MSLB ) {
+  (no) 0.05, 0.95, 0;
+  (yes) 0.95, 0.05, 0;
+
+}
+probability ( SSGWL | MSLB ) {
+  (no) 0.05, 0.95, 0;
+  (yes) 0.95, 0.05, 0;
+
+}
+probability ( PSGP | MSLB ) {
+  (no) 0.05, 0.95, 0;
+  (yes) 0.95, 0.05, 0;
+
+}
+probability ( SSGP | MSLB ) {
+  (no) 0.05, 0.95, 0;
+  (yes) 0.95, 0.05, 0;
+
+}

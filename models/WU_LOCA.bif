@@ -1,0 +1,48 @@
+network "WU_LOCA" {
+property"this is WU's model"
+}
+variable LOCA {
+  type discrete [ 2 ] { no, yes };
+}
+variable CR {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable CP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable CT {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+variable RP {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable RWL {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+probability ( LOCA ) {
+  table 0.9, 0.1;
+}
+probability ( CR | LOCA ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+
+}
+probability ( CP | LOCA ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+}
+probability ( CT | LOCA ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0, 0.05, 0.95;
+}
+
+probability ( RP | LOCA ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0.95, 0.05, 0;
+}
+probability ( RWL | LOCA ) {
+  (no) 0, 0.95, 0.05;
+  (yes) 0.95, 0.05, 0;
+}
