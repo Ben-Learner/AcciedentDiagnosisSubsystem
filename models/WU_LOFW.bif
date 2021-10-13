@@ -34,17 +34,17 @@ probability ( SSGWL | LOFW ) {
   (yes) 0.95, 0.05, 0;
 
 }
-probability ( PCPT | SGTR ) {
+probability ( PCPT |  LOFW ) {
   (no) 0, 0.95, 0.05;
   (yes) 0, 0.05, 0.95;
 
 }
-probability ( SCPT | SGTR ) {
+probability ( SCPT | LOFW ) {
   (no) 0, 0.95, 0.05;
   (yes) 0, 0.05, 0.95;
 
 }
-probability ( AP | SGTR ) {
+probability ( AP | LOFW ) {
   (no) 0, 0.95, 0.05;
   (yes) 0, 0.05, 0.95;
 }
