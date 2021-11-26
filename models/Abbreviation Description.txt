@@ -65,3 +65,32 @@ EAS-RS   安全壳喷淋再循环
 ##其他
 LPDI-Signal 低压安注直接注入启动信号
 
+#############################################################################
+
+Continuous nodes
+PCCL   1#冷却剂流量
+SCCL   2#冷却剂流量
+TCCL   3#冷却剂流量
+CL(Coolant undercooling)  冷却剂过冷度
+RP     稳压器压力
+RWL    稳压器水位
+CP     安全壳压力
+CT     安全壳温度
+PHLT   1#热段温度
+SHLT   2#热段温度
+THLT   3#热段温度
+PSGP   1#蒸汽发生器压力
+SSGP   2#蒸汽发生器压力
+TSGP   3#蒸汽发生器压力
+PSGSF  1#蒸汽流量
+SSGSF  2#蒸汽流量
+TSGSF  3#蒸汽流量
+PSGWL  1#蒸汽发生器水位
+SSGWL  2#蒸汽发生器水位
+TSGWL  3#蒸汽发生器水位
+APT    A列地坑温度
+BPT    B列地坑温度
+APWL   A列地坑水位
+BPWL   B列地坑水位
+
+Discrete nodes

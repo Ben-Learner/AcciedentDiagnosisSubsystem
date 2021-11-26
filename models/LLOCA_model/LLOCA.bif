@@ -1,0 +1,160 @@
+network "LLOCA" {
+property"this is Ben's model"
+}
+variable LLOCA {
+  type discrete [ 4 ] { no, LLOCA1, LLOCA2, LLOCA3 };
+}
+variable FanYingDuiLengQueJiZongZhuangLiang {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable WenYaQiShuiWei {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable DiKengShuiWei {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnZhuXiangYeWeiRIS001BA {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnZhuXiangYeWeiRIS002BA {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnZhuXiangYeWeiRIS003BA {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnZhuXiangYeWeiZuHe {
+  type discrete [ 4 ] { no, LLOCA1, LLOCA2, LLOCA3 };
+}
+variable RanLiaoBaoQiaoWenDu {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable WenYaQiYaLi {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable ManHuaJiMiDu {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable FanYingXing {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable DuiXinGongLv {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnQuanQiaoYaLi {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnQuanQiaoFangSheXing {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnQuanQiaoWenDu {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+
+probability ( AnZhuXiangYeWeiRIS001BA ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( AnZhuXiangYeWeiRIS002BA ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( AnZhuXiangYeWeiRIS003BA ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( AnZhuXiangYeWeiZuHe | AnZhuXiangYeWeiRIS001BA, AnZhuXiangYeWeiRIS002BA, AnZhuXiangYeWeiRIS003BA ) {
+  (normal, normal, normal) 0.91, 0.03, 0.03, 0.03;
+  (normal, normal, lower) 0.05, 0.45, 0.45, 0.05;
+  (normal, normal, higher) 0.91, 0.03, 0.03, 0.03;
+  (normal, lower, normal) 0.05, 0.45, 0.05, 0.45;
+  (normal, lower, lower) 0.03, 0.91, 0.03, 0.03;
+  (normal, lower, higher) 0.05, 0.45, 0.05, 0.45;
+  (normal, higher, normal) 0.91, 0.03, 0.03, 0.03;
+  (normal, higher, lower) 0.05, 0.45, 0.45, 0.05;
+  (normal, higher, higher) 0.91, 0.03, 0.03, 0.03;
+  (lower, normal, normal) 0.05, 0.05, 0.45, 0.45;
+  (lower, normal, lower) 0.03, 0.03, 0.91, 0.03;
+  (lower, normal, higher) 0.05, 0.05, 0.45, 0.45;
+  (lower, lower, normal) 0.03, 0.03, 0.03, 0.91;
+  (lower, lower, lower) 0.1, 0.3, 0.3, 0.3;
+  (lower, lower, higher) 0.03, 0.03, 0.03, 0.91;
+  (lower, higher, normal) 0.05, 0.05, 0.45, 0.45;
+  (lower, higher, lower) 0.03, 0.03, 0.91, 0.03;
+  (lower, higher, higher) 0.05, 0.05, 0.45, 0.45;
+  (higher, normal, normal) 0.91, 0.03, 0.03, 0.03;
+  (higher, normal, lower) 0.05, 0.45, 0.45, 0.05;
+  (higher, normal, higher) 0.91, 0.03, 0.03, 0.03;
+  (higher, lower, normal) 0.05, 0.45, 0.05, 0.45;
+  (higher, lower, lower) 0.03, 0.91, 0.03, 0.03;
+  (higher, lower, higher) 0.05, 0.45, 0.05, 0.45;
+  (higher, higher, normal) 0.91, 0.03, 0.03, 0.03;
+  (higher, higher, lower) 0.05, 0.45, 0.05, 0.45;
+  (higher, higher, higher) 0.91, 0.03, 0.03, 0.03;
+}
+probability ( LLOCA | AnZhuXiangYeWeiZuHe ) {
+  (no) 0.91, 0.03, 0.03, 0.03;
+  (LLOCA1) 0.03, 0.91, 0.03, 0.03;
+  (LLOCA2) 0.03, 0.03, 0.91, 0.03;
+  (LLOCA3) 0.03, 0.03, 0.03, 0.91;
+}
+probability ( FanYingDuiLengQueJiZongZhuangLiang | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.9, 0.05, 0.05;
+  (LLOCA2) 0.9, 0.05, 0.05;
+  (LLOCA3) 0.9, 0.05, 0.05;
+}
+probability ( WenYaQiShuiWei | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.9, 0.05, 0.05;
+  (LLOCA2) 0.9, 0.05, 0.05;
+  (LLOCA3) 0.9, 0.05, 0.05;
+}
+probability ( DiKengShuiWei  | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.05, 0.05, 0.9;
+  (LLOCA2) 0.05, 0.05, 0.9;
+  (LLOCA3) 0.05, 0.05, 0.9;
+}
+probability ( RanLiaoBaoQiaoWenDu  | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.05, 0.05, 0.9;
+  (LLOCA2) 0.05, 0.05, 0.9;
+  (LLOCA3) 0.05, 0.05, 0.9;
+}
+probability ( WenYaQiYaLi | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.9, 0.05, 0.05;
+  (LLOCA2) 0.9, 0.05, 0.05;
+  (LLOCA3) 0.9, 0.05, 0.05;
+}
+probability ( AnQuanQiaoYaLi  | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.05, 0.05, 0.9;
+  (LLOCA2) 0.05, 0.05, 0.9;
+  (LLOCA3) 0.05, 0.05, 0.9;
+}
+probability ( AnQuanQiaoFangSheXing  | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.05, 0.05, 0.9;
+  (LLOCA2) 0.05, 0.05, 0.9;
+  (LLOCA3) 0.05, 0.05, 0.9;
+}
+probability ( AnQuanQiaoWenDu  | LLOCA ) {
+  (no) 0.05, 0.9, 0.05;
+  (LLOCA1) 0.05, 0.05, 0.9;
+  (LLOCA2) 0.05, 0.05, 0.9;
+  (LLOCA3) 0.05, 0.05, 0.9;
+}
+probability ( ManHuaJiMiDu  | WenYaQiYaLi ) {
+  (no) 0.05, 0.9, 0.05;
+  (higher) 0.05, 0.05, 0.9;
+  (lower) 0.9, 0.05, 0.05;
+}
+probability ( FanYingXing  | ManHuaJiMiDu ) {
+  (no) 0.05, 0.9, 0.05;
+  (higher) 0.05, 0.05, 0.9;
+  (lower) 0.9, 0.05, 0.05;
+}
+probability ( DuiXinGongLv  | FanYingXing ) {
+  (no) 0.05, 0.9, 0.05;
+  (higher) 0.05, 0.05, 0.9;
+  (lower) 0.9, 0.05, 0.05;
+}
+

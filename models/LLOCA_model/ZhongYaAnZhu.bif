@@ -1,0 +1,62 @@
+network "ZhongYaAnZhu" {
+property"this is Ben's model"
+}
+variable ZhongYaAnZhu {
+  type discrete [ 2 ] { no, yes};
+}
+variable AnZhuXiangYeWeiRIS001BA {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnZhuXiangYeWeiRIS002BA {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable AnZhuXiangYeWeiRIS003BA {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable WenYaQiYaLiDiYu4D2MPa {
+  type discrete [ 2 ] { no, yes };
+}
+
+
+
+probability ( AnZhuXiangYeWeiRIS001BA ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( AnZhuXiangYeWeiRIS002BA ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( AnZhuXiangYeWeiRIS003BA ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( ZhongYaAnZhu | AnZhuXiangYeWeiRIS001BA, AnZhuXiangYeWeiRIS002BA, AnZhuXiangYeWeiRIS003BA, WenYaQiYaLiDiYu4D2MPa ) {
+  (normal, normal, normal) 0.91, 0.03, 0.03, 0.03;
+  (normal, normal, lower) 0.05, 0.45, 0.45, 0.05;
+  (normal, normal, higher) 0.91, 0.03, 0.03, 0.03;
+  (normal, lower, normal) 0.05, 0.45, 0.05, 0.45;
+  (normal, lower, lower) 0.03, 0.91, 0.03, 0.03;
+  (normal, lower, higher) 0.05, 0.45, 0.05, 0.45;
+  (normal, higher, normal) 0.91, 0.03, 0.03, 0.03;
+  (normal, higher, lower) 0.05, 0.45, 0.45, 0.05;
+  (normal, higher, higher) 0.91, 0.03, 0.03, 0.03;
+  (lower, normal, normal) 0.05, 0.05, 0.45, 0.45;
+  (lower, normal, lower) 0.03, 0.03, 0.91, 0.03;
+  (lower, normal, higher) 0.05, 0.05, 0.45, 0.45;
+  (lower, lower, normal) 0.03, 0.03, 0.03, 0.91;
+  (lower, lower, lower) 0.1, 0.3, 0.3, 0.3;
+  (lower, lower, higher) 0.03, 0.03, 0.03, 0.91;
+  (lower, higher, normal) 0.05, 0.05, 0.45, 0.45;
+  (lower, higher, lower) 0.03, 0.03, 0.91, 0.03;
+  (lower, higher, higher) 0.05, 0.05, 0.45, 0.45;
+  (higher, normal, normal) 0.91, 0.03, 0.03, 0.03;
+  (higher, normal, lower) 0.05, 0.45, 0.45, 0.05;
+  (higher, normal, higher) 0.91, 0.03, 0.03, 0.03;
+  (higher, lower, normal) 0.05, 0.45, 0.05, 0.45;
+  (higher, lower, lower) 0.03, 0.91, 0.03, 0.03;
+  (higher, lower, higher) 0.05, 0.45, 0.05, 0.45;
+  (higher, higher, normal) 0.91, 0.03, 0.03, 0.03;
+  (higher, higher, lower) 0.05, 0.45, 0.05, 0.45;
+  (higher, higher, higher) 0.91, 0.03, 0.03, 0.03;
+}
+probability ( WenYaQiYaLiDiYu4D2MPa ) {
+  table 0.9, 0.1;
+}
