@@ -1,0 +1,179 @@
+network "Other_HEs" {
+property"this is Ben's model"
+}
+variable AnQuanQiaoYaliDaDao0D24MPa {
+  type discrete [ 2 ] { no, yes};
+}
+variable HuanLiaoShuiXiangYeWei {
+  type discrete [ 3 ] { lower, normal, higher};
+}
+variable ALieAnPenLiuLiang {
+  type discrete [ 2 ] { no, yes};
+}
+variable BLieAnPenLiuLiang {
+  type discrete [ 2 ] { no, yes};
+}
+variable AnPenLiuLiang {
+  type discrete [ 2 ] { no, yes};
+}
+variable CaoZuoYuanShouDongTouRuAnQuanQiaoPenLin {
+  type discrete [ 2 ] { no, yes};
+}
+variable HuanLiaoShuiXiangYeWeiDa3D12m {
+  type discrete [ 2 ] { no, yes };
+}
+variable WenYaQiYaLiJiangZhi11D9MPa {
+  type discrete [ 2 ] { no, yes };
+}
+variable DiYaAnZhuBengRIS001PO {
+  type discrete [ 2 ] { no, yes };
+}
+variable DiYaAnZhuBengRIS002PO {
+  type discrete [ 2 ] { no, yes };
+}
+variable DiKengShuiWei {
+  type discrete [ 3 ] { lower, normal, higher };
+}
+variable CaoZuoYuanQieHuanTongShiZaiXunHuan {
+  type discrete [ 2 ] { no, yes};
+}
+variable AnQuanQiaoPenLinZhiJieZhuRu {
+  type discrete [ 2 ] { no, yes};
+}
+variable AnQuanQiaoPenLinZaiXunHuan {
+  type discrete [ 2 ] { no, yes};
+}
+variable DiYaAnZhuZhiJieZhuRu {
+  type discrete [ 2 ] { no, yes};
+}
+variable DiYaAnZhuLengDuanZaiXunHuan {
+  type discrete [ 2 ] { no, yes};
+}
+variable DiYaAnZhuReDuanZaiXunHuan {
+  type discrete [ 2 ] { no, yes};
+}
+probability ( AnQuanQiaoYaliDaDao0D24MPa ) {
+  table 0.9, 0.1;
+}
+probability ( HuanLiaoShuiXiangYeWei ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( ALieAnPenLiuLiang ) {
+  table 0.9, 0.1;
+}
+probability ( BLieAnPenLiuLiang ) {
+  table 0.9, 0.1;
+}
+probability ( AnPenLiuLiang | ALieAnPenLiuLiang, BLieAnPenLiuLiang ) {
+  (no, no) 0.9, 0.1;
+  (no, yes) 0.1, 0.9;
+  (yes, no) 0.1, 0.9;
+  (yes, yes) 0.1, 0.9;
+}
+probability ( CaoZuoYuanShouDongTouRuAnQuanQiaoPenLin ) {
+  table 0.9, 0.1;
+}
+probability ( HuanLiaoShuiXiangYeWeiDa3D12m ) {
+  table 0.9, 0.1;
+}
+probability ( WenYaQiYaLiJiangZhi11D9MPa ) {
+  table 0.9, 0.1;
+}
+probability ( DiYaAnZhuBengRIS001PO ) {
+  table 0.9, 0.1;
+}
+probability ( DiYaAnZhuBengRIS002PO ) {
+  table 0.9, 0.1;
+}
+probability ( DiKengShuiWei ) {
+  table 0.05, 0.9, 0.05;
+}
+probability ( CaoZuoYuanQieHuanTongShiZaiXunHuan ) {
+  table 0.9, 0.1;
+}
+probability ( AnQuanQiaoPenLinZhiJieZhuRu | AnQuanQiaoYaliDaDao0D24MPa, HuanLiaoShuiXiangYeWei, AnPenLiuLiang ) {
+  (no, normal, no) 0.9, 0.1;
+  (no, normal, yes) 0.7, 0.3;
+  (no, lower, no) 0.7, 0.3;
+  (no, lower, yes) 0.3, 0.7;
+  (no, higher, no) 0.9, 0.1;
+  (no, higher, yes) 0.7, 0.3;
+  (yes, normal, no) 0.7, 0.3;
+  (yes, normal, yes) 0.3, 0.7;
+  (yes, lower, no) 0.3, 0.7;
+  (yes, lower, yes) 0.1, 0.9;
+  (yes, higher, no) 0.7, 0.3;
+  (yes, higher, yes) 0.3, 0.7;
+}
+probability ( AnQuanQiaoPenLinZaiXunHuan | AnPenLiuLiang, CaoZuoYuanShouDongTouRuAnQuanQiaoPenLin, HuanLiaoShuiXiangYeWeiDa3D12m, DiKengShuiWei ) {
+  (no, no, no, normal) 0.9, 0.1;
+  (no, no, no, lower) 0.8, 0.2;
+  (no, no, no, higher) 0.9, 0.1;
+  (no, no, yes, normal) 0.8, 0.2;
+  (no, no, yes, lower) 0.5, 0.5;
+  (no, no, yes, higher) 0.8, 0.2;
+  (no, yes, no, normal) 0.8, 0.2;
+  (no, yes, no, lower) 0.5, 0.5;
+  (no, yes, no, higher) 0.8, 0.2;
+  (no, yes, yes, normal) 0.5, 0.5;
+  (no, yes, yes, lower) 0.2, 0.8;
+  (no, yes, yes, higher) 0.5, 0.5;
+  (yes, no, no, normal) 0.8, 0.2;
+  (yes, no, no, lower) 0.5, 0.5;
+  (yes, no, no, higher) 0.8, 0.2;
+  (yes, no, yes, normal) 0.5, 0.5;
+  (yes, no, yes, lower) 0.2, 0.8;
+  (yes, no, yes, higher) 0.5, 0.5;
+  (yes, yes, no, normal) 0.5, 0.5;
+  (yes, yes, no, lower) 0.2, 0.8;
+  (yes, yes, no, higher) 0.5, 0.5;
+  (yes, yes, yes, normal) 0.2, 0.8;
+  (yes, yes, yes, lower) 0.1, 0.9;
+  (yes, yes, yes, higher) 0.2, 0.8;
+}
+probability ( DiYaAnZhuZhiJieZhuRu | WenYaQiYaLiJiangZhi11D9MPa, DiYaAnZhuBengRIS001PO, DiYaAnZhuBengRIS002PO ) {
+  (no, no, no) 0.9, 0.1;
+  (no, no, yes) 0.1, 0.9;
+  (no, yes, no) 0.1, 0.9;
+  (no, yes, yes) 0.1, 0.9;
+  (yes, no, no) 0.9, 0.1;
+  (yes, no, yes) 0.1, 0.9;
+  (yes, yes, no) 0.1, 0.9;
+  (yes, yes, yes) 0.1, 0.9;
+}
+probability ( DiYaAnZhuLengDuanZaiXunHuan | DiYaAnZhuBengRIS001PO, DiYaAnZhuBengRIS002PO, HuanLiaoShuiXiangYeWeiDa3D12m, DiKengShuiWei ) {
+  (no, no, no, normal) 0.9, 0.1;
+  (no, no, no, lower) 0.9, 0.1;
+  (no, no, no, higher) 0.9, 0.1;
+  (no, no, yes, normal) 0.9, 0.1;
+  (no, no, yes, lower) 0.9, 0.1;
+  (no, no, yes, higher) 0.9, 0.1;
+  (no, yes, no, normal) 0.2, 0.8;
+  (no, yes, no, lower) 0.1, 0.9;
+  (no, yes, no, higher) 0.2, 0.8;
+  (no, yes, yes, normal) 0.1, 0.9;
+  (no, yes, yes, lower) 0.1, 0.9;
+  (no, yes, yes, higher) 0.1, 0.9;
+  (yes, no, no, normal) 0.2, 0.8;
+  (yes, no, no, lower) 0.1, 0.9;
+  (yes, no, no, higher) 0.2, 0.8;
+  (yes, no, yes, normal) 0.1, 0.9;
+  (yes, no, yes, lower) 0.1, 0.9;
+  (yes, no, yes, higher) 0.1, 0.9;
+  (yes, yes, no, normal) 0.1, 0.9;
+  (yes, yes, no, lower) 0.1, 0.9;
+  (yes, yes, no, higher) 0.1, 0.9;
+  (yes, yes, yes, normal) 0.1, 0.9;
+  (yes, yes, yes, lower) 0.1, 0.9;
+  (yes, yes, yes, higher) 0.1, 0.9;
+}
+probability ( DiYaAnZhuReDuanZaiXunHuan | CaoZuoYuanQieHuanTongShiZaiXunHuan, DiYaAnZhuBengRIS001PO, DiYaAnZhuBengRIS002PO ) {
+  (no, no, no) 0.9, 0.1;
+  (no, no, yes) 0.1, 0.9;
+  (no, yes, no) 0.1, 0.9;
+  (no, yes, yes) 0.1, 0.9;
+  (yes, no, no) 0.9, 0.1;
+  (yes, no, yes) 0.1, 0.9;
+  (yes, yes, no) 0.1, 0.9;
+  (yes, yes, yes) 0.1, 0.9;
+}
