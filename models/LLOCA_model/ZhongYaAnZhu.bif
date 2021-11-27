@@ -16,9 +16,6 @@ variable AnZhuXiangYeWeiRIS003BA {
 variable WenYaQiYaLiDiYu4D2MPa {
   type discrete [ 2 ] { no, yes };
 }
-
-
-
 probability ( AnZhuXiangYeWeiRIS001BA ) {
   table 0.05, 0.9, 0.05;
 }
@@ -28,35 +25,63 @@ probability ( AnZhuXiangYeWeiRIS002BA ) {
 probability ( AnZhuXiangYeWeiRIS003BA ) {
   table 0.05, 0.9, 0.05;
 }
-probability ( ZhongYaAnZhu | AnZhuXiangYeWeiRIS001BA, AnZhuXiangYeWeiRIS002BA, AnZhuXiangYeWeiRIS003BA, WenYaQiYaLiDiYu4D2MPa ) {
-  (normal, normal, normal) 0.91, 0.03, 0.03, 0.03;
-  (normal, normal, lower) 0.05, 0.45, 0.45, 0.05;
-  (normal, normal, higher) 0.91, 0.03, 0.03, 0.03;
-  (normal, lower, normal) 0.05, 0.45, 0.05, 0.45;
-  (normal, lower, lower) 0.03, 0.91, 0.03, 0.03;
-  (normal, lower, higher) 0.05, 0.45, 0.05, 0.45;
-  (normal, higher, normal) 0.91, 0.03, 0.03, 0.03;
-  (normal, higher, lower) 0.05, 0.45, 0.45, 0.05;
-  (normal, higher, higher) 0.91, 0.03, 0.03, 0.03;
-  (lower, normal, normal) 0.05, 0.05, 0.45, 0.45;
-  (lower, normal, lower) 0.03, 0.03, 0.91, 0.03;
-  (lower, normal, higher) 0.05, 0.05, 0.45, 0.45;
-  (lower, lower, normal) 0.03, 0.03, 0.03, 0.91;
-  (lower, lower, lower) 0.1, 0.3, 0.3, 0.3;
-  (lower, lower, higher) 0.03, 0.03, 0.03, 0.91;
-  (lower, higher, normal) 0.05, 0.05, 0.45, 0.45;
-  (lower, higher, lower) 0.03, 0.03, 0.91, 0.03;
-  (lower, higher, higher) 0.05, 0.05, 0.45, 0.45;
-  (higher, normal, normal) 0.91, 0.03, 0.03, 0.03;
-  (higher, normal, lower) 0.05, 0.45, 0.45, 0.05;
-  (higher, normal, higher) 0.91, 0.03, 0.03, 0.03;
-  (higher, lower, normal) 0.05, 0.45, 0.05, 0.45;
-  (higher, lower, lower) 0.03, 0.91, 0.03, 0.03;
-  (higher, lower, higher) 0.05, 0.45, 0.05, 0.45;
-  (higher, higher, normal) 0.91, 0.03, 0.03, 0.03;
-  (higher, higher, lower) 0.05, 0.45, 0.05, 0.45;
-  (higher, higher, higher) 0.91, 0.03, 0.03, 0.03;
-}
 probability ( WenYaQiYaLiDiYu4D2MPa ) {
   table 0.9, 0.1;
 }
+probability ( ZhongYaAnZhu | AnZhuXiangYeWeiRIS001BA, AnZhuXiangYeWeiRIS002BA, AnZhuXiangYeWeiRIS003BA, WenYaQiYaLiDiYu4D2MPa ) {
+  (normal, normal, normal, no) 0.9, 0.1;
+  (normal, normal, normal, yes) 0.9, 0.1;
+  (normal, normal, lower, no) 0.8, 0.2;
+  (normal, normal, lower, yes) 0.6, 0.4;
+  (normal, normal, higher, no) 0.9, 0.1;
+  (normal, normal, higher, yes) 0.9, 0.1;
+  (normal, lower, normal, no) 0.8, 0.2;
+  (normal, lower, normal, yes) 0.6, 0.4;
+  (normal, lower, lower, no) 0.1, 0.9;
+  (normal, lower, lower, yes) 0.1, 0.9;
+  (normal, lower, higher, no) 0.8, 0.2;
+  (normal, lower, higher, yes) 0.6, 0.4;
+  (normal, higher, normal, no) 0.9, 0.1;
+  (normal, higher, normal, yes) 0.9, 0.1;
+  (normal, higher, lower, no) 0.8, 0.2;
+  (normal, higher, lower, yes) 0.6, 0.4;
+  (normal, higher, higher, no) 0.9, 0.1;
+  (normal, higher, higher, yes) 0.9, 0.1;
+  (lower, normal, normal, no) 0.8, 0.2;
+  (lower, normal, normal, yes) 0.6, 0.4;
+  (lower, normal, lower, no) 0.1, 0.9;
+  (lower, normal, lower, yes) 0.1, 0.9;
+  (lower, normal, higher, no) 0.8, 0.2;
+  (lower, normal, higher, yes) 0.6, 0.4;
+  (lower, lower, normal, no) 0.1, 0.9;
+  (lower, lower, normal, yes) 0.1, 0.9;
+  (lower, lower, lower, no) 0.1, 0.9;
+  (lower, lower, lower, yes) 0.1, 0.9;
+  (lower, lower, higher, no) 0.1, 0.9;
+  (lower, lower, higher, yes) 0.1, 0.9;
+  (lower, higher, normal, no) 0.8, 0.2;
+  (lower, higher, normal, yes) 0.6, 0.4;
+  (lower, higher, lower, no) 0.1, 0.9;
+  (lower, higher, lower, yes) 0.1, 0.9;
+  (lower, higher, higher, no) 0.8, 0.2;
+  (lower, higher, higher, yes) 0.6, 0.4;
+  (higher, normal, normal, no) 0.9, 0.1;
+  (higher, normal, normal, yes) 0.9, 0.1;
+  (higher, normal, lower, no) 0.8, 0.2;
+  (higher, normal, lower, yes) 0.6, 0.4;
+  (higher, normal, higher, no) 0.9, 0.1;
+  (higher, normal, higher, yes) 0.9, 0.1;
+  (higher, lower, normal, no) 0.8, 0.2;
+  (higher, lower, normal, yes) 0.6, 0.4;
+  (higher, lower, lower, no) 0.1, 0.9;
+  (higher, lower, lower, yes) 0.1, 0.9;
+  (higher, lower, higher, no) 0.8, 0.2;
+  (higher, lower, higher, yes) 0.6, 0.4;
+  (higher, higher, normal, no) 0.9, 0.1;
+  (higher, higher, normal, yes) 0.9, 0.1;
+  (higher, higher, lower, no) 0.8, 0.2;
+  (higher, higher, lower, yes) 0.6, 0.4;
+  (higher, higher, higher, no) 0.1, 0.9;
+  (higher, higher, higher, yes) 0.1, 0.9;
+}
+
