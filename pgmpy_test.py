@@ -119,5 +119,11 @@ class data_fusion:
                 sub_result *= self.multi_source_evidence[i + (j * self.status_number)]
             result.append(sub_result)
         return result
-
+def first_pra_caculate():
+    """
+    读取一级PRA事故序列模型
+    查询一级PRA始发事件和题头事件计算结果
+    计算每条事故序列最终结果
+    :return:
+    """
 
